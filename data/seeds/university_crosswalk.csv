@@ -1,0 +1,102 @@
+ateneo_code,study_city,istat_comune,is_online,almalaurea_name,note
+101,Torino,Torino,false,Torino,
+102,Torino,Torino,false,Torino Politecnico,
+201,Vercelli,Vercelli,false,Piemonte Orientale,Multi-campus (Vercelli/Novara/Alessandria); MUR seat is Vercelli
+401,Bra,Bra,false,Scienze Gastronomiche,Campus in Pollenzo (frazione of Bra)
+701,Aosta,Aosta,false,Valle d'Aosta,
+1001,Genova,Genova,false,Genova,
+1201,Castellanza,Castellanza,false,LIUC Carlo Cattaneo,
+1202,Varese,Varese,false,Insubria,Multi-campus (Varese/Como)
+1301,,Novedrate,true,eCampus - telematica,Online university
+1501,Milano,Milano,false,Milano,
+1502,Milano,Milano,false,,Not an AlmaLaurea member
+1503,Milano,Milano,false,,Not an AlmaLaurea member
+1504,Milano,Milano,false,,Not an AlmaLaurea member
+1505,Milano,Milano,false,Milano IULM,
+1508,Milano,Milano,false,Milano Vita-Salute S. Raffaele,
+1509,Milano,Milano,false,Milano Bicocca,
+1510,Milano,Pieve Emanuele,false,Milano Humanitas,Campus in Pieve Emanuele (Milan metro area)
+1511,Milano,Milano,false,,Postgraduate-only school
+1601,Bergamo,Bergamo,false,Bergamo,
+1701,Brescia,Brescia,false,Brescia,
+1801,Pavia,Pavia,false,Pavia,
+1802,Pavia,Pavia,false,,Postgraduate-only school (IUSS)
+2101,Bolzano,Bolzano,false,Bolzano,
+2201,Trento,Trento,false,Trento,
+2301,Verona,Verona,false,Verona,
+2701,Venezia,Venezia,false,Venezia Ca' Foscari,
+2702,Venezia,Venezia,false,Venezia IUAV,
+2801,Padova,Padova,false,Padova,
+3001,Udine,Udine,false,Udine,
+3201,Trieste,Trieste,false,Trieste,
+3202,Trieste,Trieste,false,,Postgraduate-only school (SISSA)
+3401,Parma,Parma,false,Parma,
+3601,Modena,Modena,false,Modena e Reggio Emilia,Multi-campus (Modena/Reggio Emilia)
+3701,Bologna,Bologna,false,Bologna,Multi-campus Romagna sites counted under Bologna
+3801,Ferrara,Ferrara,false,Ferrara,
+4101,Urbino,Urbino,false,Urbino Carlo Bo,
+4201,Ancona,Ancona,false,Marche Politecnica,
+4301,Macerata,Macerata,false,Macerata,
+4302,Camerino,Camerino,false,Camerino,
+4601,Lucca,Lucca,false,,Postgraduate-only school (IMT)
+4801,Firenze,Firenze,false,Firenze,
+4804,,Firenze,true,,Online university
+5001,Pisa,Pisa,false,Pisa,
+5002,Pisa,Pisa,false,,Scuola Normale (selective school)
+5003,Pisa,Pisa,false,,Sant'Anna (selective school)
+5201,Siena,Siena,false,Siena,
+5202,Siena,Siena,false,Siena Stranieri,
+5401,Perugia,Perugia,false,Perugia,
+5403,Perugia,Perugia,false,Perugia Stranieri,
+5601,Viterbo,Viterbo,false,Tuscia,
+5801,Roma,Roma,false,Roma Sapienza,
+5802,Roma,Roma,false,Roma Tor Vergata,
+5803,Roma,Roma,false,Roma LUMSA,
+5805,Roma,Roma,false,,Not an AlmaLaurea member
+5806,Roma,Roma,false,Roma Foro Italico,
+5807,Roma,Roma,false,Roma Tre,
+5808,Roma,Roma,false,Roma Campus Bio-Medico,
+5809,Roma,Roma,false,Roma UNINT,
+5810,,Roma,true,,Online university
+5811,,Roma,true,,Online university
+5812,Roma,Roma,false,Roma Europea,
+5813,,Roma,true,,Online university
+5814,,Roma,true,,Online university
+5815,,Roma,true,,Online university
+5816,,Roma,true,,Online university
+5817,Roma,Roma,false,Roma Link,
+5818,Roma,Roma,false,Roma UniCamillus,
+5819,Roma,Roma,false,,Defence studies school
+6001,Cassino,Cassino,false,Cassino e Lazio Meridionale,
+6201,Benevento,Benevento,false,Sannio,
+6202,,Benevento,true,Giustino Fortunato - telematica,Online university
+6301,Napoli,Napoli,false,Napoli Federico II,
+6302,Napoli,Napoli,false,Napoli Parthenope,
+6303,Napoli,Napoli,false,Napoli L'Orientale,
+6304,Napoli,Napoli,false,Napoli Benincasa,
+6306,Caserta,Caserta,false,Campania Luigi Vanvitelli,Campuses in Caserta and Napoli; MUR seat is Caserta
+6307,,Napoli,true,,Online university
+6308,Napoli,Napoli,false,,Founded 2024 (Scuola Superiore Meridionale)
+6501,Salerno,Fisciano,false,Salerno,Campus in Fisciano (Salerno province)
+6601,L'Aquila,L'Aquila,false,L'Aquila,
+6603,L'Aquila,L'Aquila,false,,Postgraduate-only school (GSSI)
+6701,Teramo,Teramo,false,Teramo,
+6901,Chieti,Chieti,false,Chieti e Pescara,Campuses in Chieti and Pescara
+6902,,Torrevecchia Teatina,true,,Online university
+7001,Campobasso,Campobasso,false,Molise,
+7101,Foggia,Foggia,false,Foggia,
+7201,Bari,Bari,false,Bari,
+7202,Bari,Bari,false,Bari Politecnico,
+7203,Bari,Casamassima,false,LUM Giuseppe Degennaro,Campus in Casamassima (Bari metro area)
+7501,Lecce,Lecce,false,Salento,
+7601,Potenza,Potenza,false,Basilicata,
+7801,Cosenza,Rende,false,Calabria,Campus in Arcavacata di Rende (Cosenza urban area)
+7901,Catanzaro,Catanzaro,false,Catanzaro,
+8001,Reggio Calabria,Reggio di Calabria,false,Reggio Calabria Mediterranea,
+8003,Reggio Calabria,Reggio di Calabria,false,,
+8201,Palermo,Palermo,false,Palermo,
+8301,Messina,Messina,false,Messina,
+8601,Enna,Enna,false,Enna Kore,
+8701,Catania,Catania,false,Catania,
+9001,Sassari,Sassari,false,Sassari,
+9201,Cagliari,Cagliari,false,Cagliari,

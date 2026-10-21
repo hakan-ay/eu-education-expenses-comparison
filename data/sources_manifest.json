@@ -1,0 +1,142 @@
+[
+  {
+    "file": "data/raw/mur/fees_avg.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/b47de019-4086-4b19-bb6b-4d8bc622b195/resource/f6cfefca-4816-43bb-8516-aed2ae8283db/download/2024_atenei_contribuzione_media.csv",
+    "retrieved_at": "2026-10-21T23:29:19+00:00"
+  },
+  {
+    "file": "data/raw/mur/fees_exemptions.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/b47de019-4086-4b19-bb6b-4d8bc622b195/resource/50452778-9c18-4e6d-a680-90374c56df7e/download/2024_atenei_esonero_totale.csv",
+    "retrieved_at": "2026-10-21T23:29:19+00:00"
+  },
+  {
+    "file": "data/raw/mur/dsu_interventions.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/f08aad0f-50e9-4e6f-a960-313074a4dc62/resource/46beff77-505d-45ff-87a9-d9ae8253da73/download/2024_dsu_interventi_rett20260626.csv",
+    "retrieved_at": "2026-10-21T23:29:19+00:00"
+  },
+  {
+    "file": "data/raw/mur/dsu_spending.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/f08aad0f-50e9-4e6f-a960-313074a4dc62/resource/bfcff930-0d0e-49e9-8918-c388cb3893ac/download/2024_dsu_spesa_rett20250528.csv",
+    "retrieved_at": "2026-10-21T23:29:20+00:00"
+  },
+  {
+    "file": "data/raw/mur/dsu_beds_by_comune.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/f08aad0f-50e9-4e6f-a960-313074a4dc62/resource/8253b678-165e-4e7e-83ba-d8775180e5a1/download/2024_dsu_alloggi_comune.csv",
+    "retrieved_at": "2026-10-21T23:29:20+00:00"
+  },
+  {
+    "file": "data/raw/mur/enrolled_by_university.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/3dd9ca7f-9cc9-4a1a-915c-e569b181dbd5/resource/32d26e28-a0b5-45f3-9152-6072164f3e63/download/02_iscrittixateneo.csv",
+    "retrieved_at": "2026-10-21T23:30:36+00:00"
+  },
+  {
+    "file": "data/raw/mur/enrolled_by_course.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/3dd9ca7f-9cc9-4a1a-915c-e569b181dbd5/resource/ad5a1516-ccd3-4eb8-a889-f584f04de578/download/13_iscrittixcorso.csv",
+    "retrieved_at": "2026-10-21T23:30:37+00:00"
+  },
+  {
+    "file": "data/raw/mur/enrolled_intl_by_university.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/3dd9ca7f-9cc9-4a1a-915c-e569b181dbd5/resource/27ba8d3b-9a54-4a75-8798-2010bc7c205a/download/10_iscrittiinternazionalixateneo.csv",
+    "retrieved_at": "2026-10-21T23:30:37+00:00"
+  },
+  {
+    "file": "data/raw/mur/graduates_by_university.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/ca0b9831-c9ef-49d4-b792-6bd963e4d837/resource/88acd482-9d75-44d1-ab16-aa04524f5d94/download/02_laureatixateneo.csv",
+    "retrieved_at": "2026-10-21T23:30:37+00:00"
+  },
+  {
+    "file": "data/raw/mur/universities.csv",
+    "url": "https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/820aefe6-0662-4656-84ec-d8859a2a3b7e/download/01_atenei.csv",
+    "retrieved_at": "2026-10-21T23:38:28+00:00"
+  },
+  {
+    "file": "data/raw/mur/field_groups.xlsx",
+    "url": "https://dati-ustat.mur.gov.it/dataset/bed0c71e-9f86-4a0f-a266-963b6f7bbbd2/resource/417574e0-fae8-4fe3-a466-bc3301f9e449/download/gruppidisciplinari.xlsx",
+    "retrieved_at": "2026-10-21T23:38:29+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_L_1y_ateneo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=L&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=1&condocc=tutti&iscrls=tutti&disaggregazione=ateneo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:31:18+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_L_1y_gruppo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=L&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=1&condocc=tutti&iscrls=tutti&disaggregazione=gruppo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:31:41+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LS_1y_ateneo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LS&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=1&condocc=tutti&iscrls=tutti&disaggregazione=ateneo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:32:18+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LS_1y_gruppo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LS&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=1&condocc=tutti&iscrls=tutti&disaggregazione=gruppo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:32:33+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LS_5y_ateneo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LS&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=5&condocc=tutti&iscrls=tutti&disaggregazione=ateneo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:33:12+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LS_5y_gruppo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LS&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=5&condocc=tutti&iscrls=tutti&disaggregazione=gruppo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:33:29+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LSE_1y_ateneo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LSE&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=1&condocc=tutti&iscrls=tutti&disaggregazione=ateneo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:33:58+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LSE_1y_gruppo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LSE&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=1&condocc=tutti&iscrls=tutti&disaggregazione=gruppo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:34:08+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LSE_5y_ateneo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LSE&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=5&condocc=tutti&iscrls=tutti&disaggregazione=ateneo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:34:36+00:00"
+  },
+  {
+    "file": "data/raw/almalaurea/2025_LSE_5y_gruppo.html",
+    "url": "https://www2.almalaurea.it/cgi-php/universita/statistiche/visualizza.php?anno=2025&corstipo=LSE&ateneo=tutti&facolta=tutti&gruppo=tutti&pa=tutti&classe=tutti&postcorso=tutti&isstella=0&annolau=5&condocc=tutti&iscrls=tutti&disaggregazione=gruppo&LANG=it&CONFIG=occupazione",
+    "retrieved_at": "2026-10-21T23:34:47+00:00"
+  },
+  {
+    "file": "data/raw/eurostat/prc_ppp_ind.tsv.gz",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/prc_ppp_ind?format=TSV&compressed=true",
+    "retrieved_at": "2026-10-21T23:34:52+00:00"
+  },
+  {
+    "file": "data/raw/eurostat/edat_lfse_24.tsv.gz",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/edat_lfse_24?format=TSV&compressed=true",
+    "retrieved_at": "2026-10-21T23:34:52+00:00"
+  },
+  {
+    "file": "data/raw/eurostat/edat_lfse_03.tsv.gz",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/edat_lfse_03?format=TSV&compressed=true",
+    "retrieved_at": "2026-10-21T23:34:52+00:00"
+  },
+  {
+    "file": "data/raw/eurostat/educ_uoe_mobs02.tsv.gz",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/educ_uoe_mobs02?format=TSV&compressed=true",
+    "retrieved_at": "2026-10-21T23:34:53+00:00"
+  },
+  {
+    "file": "data/raw/eurostat/educ_uoe_enrt01.tsv.gz",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/data/educ_uoe_enrt01?format=TSV&compressed=true",
+    "retrieved_at": "2026-10-21T23:34:53+00:00"
+  },
+  {
+    "file": "data/raw/omi/rapporto_immobiliare_2026.pdf",
+    "url": "https://www.agenziaentrate.gov.it/portale/documents/20143/263076/RI2026_Residenziale20260521.pdf/892125df-86a3-c21a-f8a1-86323f45ae93",
+    "retrieved_at": "2026-10-21T23:34:53+00:00"
+  },
+  {
+    "file": "data/raw/istat/comuni.json",
+    "url": "https://situas-servizi.istat.it/publish/reportspooljson?pfun=61&pdata=01/01/2026",
+    "retrieved_at": "2026-10-21T23:34:55+00:00"
+  }
+]

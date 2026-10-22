@@ -38,5 +38,5 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
       - run: npm --prefix web ci
-      - run: npm --prefix web run lint
+      - run: npm --prefix web run lint -- --deny-warnings
       - run: npm --prefix web run build

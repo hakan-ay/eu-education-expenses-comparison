@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
-import { Chart, baseOption, esc, useTokens, type Tokens } from '../components/Chart'
+import { Chart } from '../components/Chart'
+import { baseOption, esc, useTokens, type Tokens } from '../components/chartTheme'
 import { SortableTable, type Column } from '../components/SortableTable'
 import { annualCost, fmt, type Assumptions, type City, type CityField, type FieldOutcome } from '../data'
 

@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
-import { Chart, baseOption, esc, useTokens } from '../components/Chart'
+import { Chart } from '../components/Chart'
+import { baseOption, esc, useTokens } from '../components/chartTheme'
 import { SortableTable, type Column } from '../components/SortableTable'
 import {
   annualCost, annualRent, fmt, MACRO_GROUP, MACRO_GROUPS, RENT_SOURCE_LABEL,
@@ -10,7 +11,7 @@ export type OutcomeKey =
   | 'employment_rate_master_1y' | 'employment_rate_master_5y'
   | 'net_salary_master_1y' | 'net_salary_master_5y'
 
-export const OUTCOMES: Record<OutcomeKey, { label: string; short: string; isPct: boolean }> = {
+const OUTCOMES: Record<OutcomeKey, { label: string; short: string; isPct: boolean }> = {
   employment_rate_master_1y: { label: "Employment rate, master's graduates after 1 year", short: 'Employed after 1y', isPct: true },
   employment_rate_master_5y: { label: "Employment rate, master's graduates after 5 years", short: 'Employed after 5y', isPct: true },
   net_salary_master_1y: { label: "Net monthly salary, master's graduates after 1 year", short: 'Salary after 1y', isPct: false },
@@ -28,7 +29,7 @@ export function CostVsOutcomes({ cities, assumptions, outcome, setOutcome }: {
   const t = useTokens()
   const [minStudents, setMinStudents] = useState(5000)
   const o = OUTCOMES[outcome]
-  const colors = [t.series1, t.series2, t.series3]
+  const colors = useMemo(() => [t.series1, t.series2, t.series3], [t])
 
   const points = useMemo(() => cities
     .filter((c) => c.students >= minStudents)

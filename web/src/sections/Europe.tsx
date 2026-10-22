@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
-import { Chart, baseOption, esc, useTokens } from '../components/Chart'
+import { useCallback, useMemo, useState } from 'react'
+import { Chart } from '../components/Chart'
+import { baseOption, esc, useTokens } from '../components/chartTheme'
 import type { EuIndicator, EuLatest, EuSeries } from '../data'
 
 const COUNTRY: Record<string, string> = {
@@ -32,7 +33,7 @@ export function Europe({ latest, series }: { latest: EuLatest[]; series: EuSerie
   const t = useTokens()
   const [ind, setInd] = useState<EuIndicator>('recent_grad_employment_pct')
   const meta = INDICATORS[ind]
-  const fmtV = (v: number) => `${v.toFixed(1)}${meta.unit}`
+  const fmtV = useCallback((v: number) => `${v.toFixed(1)}${meta.unit}`, [meta.unit])
 
   const rows = useMemo(() => latest.filter((r) => r.indicator === ind && r.geo !== 'EU27_2020').sort((a, b) => b.value - a.value), [latest, ind])
   const eu = latest.find((r) => r.indicator === ind && r.geo === 'EU27_2020')
@@ -70,7 +71,7 @@ export function Europe({ latest, series }: { latest: EuLatest[]; series: EuSerie
         },
       }],
     }
-  }, [rows, eu, t, ind])
+  }, [rows, eu, t, fmtV])
 
   const lineOption = useMemo(() => {
     const b = baseOption(t)
@@ -95,7 +96,7 @@ export function Europe({ latest, series }: { latest: EuLatest[]; series: EuSerie
       yAxis: { ...b.axis, type: 'value', scale: true },
       series: [line('Italy', t.series1, itS), line('EU-27', t.textMuted, euS)],
     }
-  }, [series, ind, t])
+  }, [series, ind, t, fmtV])
 
   return (
     <section id="europe">

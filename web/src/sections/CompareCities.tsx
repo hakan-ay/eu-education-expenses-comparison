@@ -1,5 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react'
-import { Chart, baseOption, esc, useTokens } from '../components/Chart'
+import { Chart } from '../components/Chart'
+import { baseOption, esc, useTokens } from '../components/chartTheme'
 import { annualCost, annualRent, fmt, RENT_SOURCE_LABEL, type Assumptions, type City, type CityTrend } from '../data'
 
 const DEFAULT = ['Milano', 'Bologna', 'Padova']
@@ -14,7 +15,7 @@ export function CompareCities({ cities, trend, assumptions }: {
   const byName = useMemo(() => new Map(cities.map((c) => [c.study_city, c])), [cities])
   const selected = picked.map((n) => byName.get(n)).filter((c): c is City => !!c)
   const sortedNames = useMemo(() => cities.map((c) => c.study_city).sort((a, b) => a.localeCompare(b)), [cities])
-  const colors = [t.series1, t.series2, t.series3]
+  const colors = useMemo(() => [t.series1, t.series2, t.series3], [t])
 
   const costOption = useMemo(() => {
     const b = baseOption(t)

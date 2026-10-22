@@ -11,6 +11,13 @@ study, with Italy set in a European context.
 
 ![Stack](https://img.shields.io/badge/Python-3.13-3776AB) ![DuckDB](https://img.shields.io/badge/DuckDB-SQL%20model-FFF000) ![React](https://img.shields.io/badge/React-19-61DAFB) ![Tests](https://img.shields.io/badge/data%20tests-12%2F12-0ca30c)
 
+<a href="https://study-in-italy-dashboard.vercel.app">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/dashboard-dark.png">
+    <img src="docs/dashboard-light.png" alt="Dashboard: headline numbers, cost assumptions and a scatter of yearly cost vs graduate employment for 54 Italian university cities">
+  </picture>
+</a>
+
 ---
 
 ## Key findings
@@ -184,6 +191,7 @@ data/
   seeds/              hand-maintained crosswalk (reviewed, tested)
   sources_manifest.json
   raw/ interim/       (git-ignored, recreated by `make data`)
+docs/                 README screenshots (light / dark)
 web/
   public/data/        exported marts (committed)
   src/                React app: sections/, components/

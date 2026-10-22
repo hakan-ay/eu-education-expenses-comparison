@@ -9,7 +9,7 @@ study, with Italy set in a European context.
 
 > **Live dashboard:** [study-in-italy-dashboard.vercel.app](https://study-in-italy-dashboard.vercel.app)
 
-![Stack](https://img.shields.io/badge/Python-3.13-3776AB) ![DuckDB](https://img.shields.io/badge/DuckDB-SQL%20model-FFF000) ![React](https://img.shields.io/badge/React-19-61DAFB) ![Tests](https://img.shields.io/badge/data%20tests-12%2F12-0ca30c)
+![Stack](https://img.shields.io/badge/Python-3.13-3776AB) ![DuckDB](https://img.shields.io/badge/DuckDB-SQL%20model-FFF000) ![React](https://img.shields.io/badge/React-19-61DAFB) [![CI](https://github.com/hakan-ay/eu-education-expenses-comparison/actions/workflows/ci.yml/badge.svg)](https://github.com/hakan-ay/eu-education-expenses-comparison/actions/workflows/ci.yml)
 
 <a href="https://study-in-italy-dashboard.vercel.app">
   <picture>
@@ -78,6 +78,8 @@ flowchart LR
 | Core | [`pipeline/sql/02_core.sql`](pipeline/sql/02_core.sql) | Conformed dimensions (university, city, field) and facts. All business rules live here. |
 | Marts | [`pipeline/sql/03_marts.sql`](pipeline/sql/03_marts.sql) | One table per dashboard view, with weighted aggregations. |
 | Tests | [`pipeline/sql/tests/`](pipeline/sql/tests) | 12 assertion queries that must return zero rows; the build fails otherwise. |
+| Snapshot | [`data/snapshot/`](data/snapshot) | Every full build saves the 20 staging views as Parquet (~0.6 MB, committed), so the model can be rebuilt and tested without downloading the sources. |
+| CI | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | On every push: rebuild core + marts from the snapshot, run the 12 data tests, check that the committed JSON is exactly what the SQL produces, then lint and build the dashboard. |
 | Web | [`web/`](web) | Vite + React + TypeScript + ECharts. Static, no backend. |
 
 ## Data cleaning: the interesting part
@@ -161,7 +163,12 @@ Requires Python 3.11+ and Node 20+.
 make setup   # venv + pip install, npm ci
 make data    # extract → parse → DuckDB model → tests → web/public/data/*.json  (~2 min)
 make dev     # http://localhost:5173
+make test    # rebuild from data/snapshot/ and run the data tests, no downloads (this is what CI runs)
 ```
+
+**What CI covers, and what it doesn't.** CI checks every change to the SQL, the snapshot, the exported JSON and
+the dashboard code. It does not download the sources, so a change at a publisher (a new file layout, revised
+figures) only shows up when `make data` is run; that run also refreshes the snapshot, and the diff shows what moved.
 
 The exported JSON is committed, so the dashboard also runs without the Python steps:
 `cd web && npm ci && npm run dev`.
@@ -185,13 +192,15 @@ pipeline/
   sources.py          catalogue of every external source
   extract.py          download + provenance manifest
   parse.py            HTML / PDF / SDMX / encoding → tidy CSV
-  build.py            run SQL models, run tests, export JSON
-  sql/                01_staging · 02_core · 03_marts · tests/
+  build.py            run SQL models, run tests, export JSON + snapshot
+  sql/                00_macros · 01_staging · 02_core · 03_marts · tests/
 data/
   seeds/              hand-maintained crosswalk (reviewed, tested)
+  snapshot/           staging views as Parquet (written by every full build, used by CI)
   sources_manifest.json
   raw/ interim/       (git-ignored, recreated by `make data`)
 docs/                 README screenshots (light / dark)
+.github/workflows/    CI: data tests on the snapshot, dashboard lint + build
 web/
   public/data/        exported marts (committed)
   src/                React app: sections/, components/

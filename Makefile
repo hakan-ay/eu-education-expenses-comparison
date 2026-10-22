@@ -1,6 +1,6 @@
 PY := .venv/bin/python
 
-.PHONY: setup data extract parse build web dev clean
+.PHONY: setup data extract parse build test web dev clean
 
 setup:            ## create the Python venv and install web dependencies
 	python3 -m venv .venv && $(PY) -m pip install -q -r requirements.txt
@@ -16,6 +16,9 @@ parse:
 
 build:
 	$(PY) -m pipeline.build
+
+test:             ## data tests on the committed snapshot, no downloads (what CI runs)
+	$(PY) -m pipeline.build --from-snapshot
 
 web:              ## production build of the dashboard (web/dist)
 	npm --prefix web run build

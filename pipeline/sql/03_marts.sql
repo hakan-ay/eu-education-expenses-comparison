@@ -1,6 +1,7 @@
 -- =============================================================================
 -- MARTS: one table per dashboard view. Every number shown on the website comes
 -- from exactly one of these tables (exported to web/public/data/*.json).
+-- Every mart has an ORDER BY so the exported JSON is stable and diffs stay readable.
 -- =============================================================================
 
 create schema if not exists mart;
@@ -56,7 +57,8 @@ left join enrol e using (ateneo_code)
 left join enrol_5y_ago p using (ateneo_code)
 left join core.fct_university_support s using (ateneo_code)
 left join outcomes o using (ateneo_code)
-where e.students > 0;
+where e.students > 0
+order by u.university;
 
 -- ---------------------------------------------------------------- cities
 
@@ -118,7 +120,8 @@ from core.fct_enrolment e
 join core.dim_university u using (ateneo_code)
 where not u.is_online and e.academic_year >= '2015/2016'
   and e.academic_year <= (select period from core.reference_periods where topic = 'enrolment')
-group by all;
+group by all
+order by study_city, academic_year;
 
 -- ---------------------------------------------------------------- fields of study
 
@@ -132,7 +135,8 @@ select
     o.months_to_first_job, o.degree_effective_pct, o.job_satisfaction,
     o.working_abroad_pct, o.permanent_contract_pct
 from core.fct_outcomes_field o
-join core.dim_field f using (field_code);
+join core.dim_field f using (field_code)
+order by f.field_code, o.course_type, o.years_after;
 
 create or replace table mart.city_field_enrolment as
 select u.study_city, f.field_code, f.field_name, sum(e.students) as students
@@ -140,7 +144,8 @@ from core.fct_enrolment_field e
 join core.dim_university u using (ateneo_code)
 join core.dim_field f using (field_code)
 where not u.is_online
-group by all;
+group by all
+order by study_city, field_code;
 
 -- ---------------------------------------------------------------- EU context
 
@@ -153,7 +158,8 @@ with long as (
 select geo, indicator, arg_max(value, year) as value, max(year) as year
 from long
 where value is not null
-group by all;
+group by all
+order by geo, indicator;
 
 create or replace table mart.eu_country_series as
 select geo, year, price_level_index, recent_grad_employment_pct,

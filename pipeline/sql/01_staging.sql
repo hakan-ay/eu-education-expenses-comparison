@@ -6,15 +6,6 @@
 
 create schema if not exists stg;
 
--- Italian-formatted numbers ("2160,32", "1.285") -> DOUBLE
-create or replace macro it_num(x) as
-    try_cast(replace(replace(nullif(trim(x), ''), '.', ''), ',', '.') as double);
-
--- Turn "Friuli- Venezia Giulia", "Valle d'Aosta/Vallée d'Aoste", "Nord-est" into
--- a comparable key: lower-case, part before '/', letters only.
-create or replace macro geo_key(x) as
-    regexp_replace(lower(split_part(x, '/', 1)), '[^a-z]', '', 'g');
-
 -- ---------------------------------------------------------------- reference data
 
 create or replace view stg.istat_comuni as
@@ -64,7 +55,7 @@ select
     replace(trim(ANNO_ACCADEMICO), '-', '/')      as academic_year,
     trim(NOME_REGIONE)                            as region_name,
     trim(NOME_ENTE)                               as agency,
-    cast(CODICE_ISTITUTO as integer)              as institution_code,
+    cast(CODICE_ISTITUTO as bigint)               as institution_code,
     trim(TIPO_ISTITUTO)                           as institution_type,
     cast(CODICE_INTERVENTO as integer)            as measure_code,
     trim(DESCRIZIONE_INTERVENTO)                  as measure,
@@ -74,7 +65,7 @@ from read_csv('data/interim/mur/dsu_interventions.csv', delim = ';', all_varchar
 create or replace view stg.dsu_spending as
 select
     cast(trim(ANNO_SOLARE) as integer)            as calendar_year,
-    cast(CODICE_ISTITUTO as integer)              as institution_code,
+    cast(CODICE_ISTITUTO as bigint)               as institution_code,
     trim(TIPO_ISTITUTO)                           as institution_type,
     cast(CODICE_SPESA as integer)                 as spending_code,
     trim(DESCRIZIONE_SPESA)                       as spending,

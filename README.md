@@ -7,7 +7,7 @@ student housing, rents and graduate employment. A Python + DuckDB pipeline clean
 check every build, and the result is an interactive dashboard that compares cities, universities and fields of
 study, with Italy set in a European context.
 
-> **Live dashboard:** _add your Vercel URL here after deploying (see [Deploy](#deploy))_
+> **Live dashboard:** [study-in-italy-dashboard.vercel.app](https://study-in-italy-dashboard.vercel.app)
 
 ![Stack](https://img.shields.io/badge/Python-3.13-3776AB) ![DuckDB](https://img.shields.io/badge/DuckDB-SQL%20model-FFF000) ![React](https://img.shields.io/badge/React-19-61DAFB) ![Tests](https://img.shields.io/badge/data%20tests-12%2F12-0ca30c)
 

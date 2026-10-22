@@ -68,6 +68,8 @@ flowchart LR
     D --> S1[stg.* views] --> S2[core.* dims & facts] --> S3[mart.* tables]
     S3 --> T{{12 SQL data tests}}
     T --> J[JSON exports] --> W[React + ECharts<br/>static site on Vercel]
+    S1 -. every full build .-> SNAP[(data/snapshot<br/>Parquet)]
+    SNAP -. CI on every push .-> S2
 ```
 
 | Layer | Where | What happens |

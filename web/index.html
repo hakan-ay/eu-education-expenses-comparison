@@ -10,6 +10,16 @@
     <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://study-in-italy-dashboard.vercel.app/" />
 
+    <!-- Start the data downloads in parallel with the JavaScript (fetched by src/data.ts). -->
+    <link rel="preload" href="/data/cities.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/universities.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/fields.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/city_fields.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/city_trend.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/eu_latest.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/eu_series.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/meta.json" as="fetch" crossorigin />
+
     <!-- Link previews (LinkedIn, Slack, X). Image URLs must be absolute. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Study in Italy: Cost vs Outcomes" />

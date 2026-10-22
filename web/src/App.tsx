@@ -1,11 +1,15 @@
-import { useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import { annualCost, fmt, MACRO_GROUP, useData, type Assumptions, type Data, type RentSegment } from './data'
-import { CostVsOutcomes, type OutcomeKey } from './sections/CostVsOutcomes'
-import { CompareCities } from './sections/CompareCities'
-import { Fields } from './sections/Fields'
+import type { OutcomeKey } from './sections/CostVsOutcomes'
 import { Universities } from './sections/Universities'
-import { Europe } from './sections/Europe'
 import { Methodology } from './sections/Methodology'
+
+// The chart sections pull in ECharts (~185 kB gzip). Loading them lazily lets the header,
+// headline numbers and cost controls render without waiting for it.
+const CostVsOutcomes = lazy(() => import('./sections/CostVsOutcomes').then((m) => ({ default: m.CostVsOutcomes })))
+const CompareCities = lazy(() => import('./sections/CompareCities').then((m) => ({ default: m.CompareCities })))
+const Fields = lazy(() => import('./sections/Fields').then((m) => ({ default: m.Fields })))
+const Europe = lazy(() => import('./sections/Europe').then((m) => ({ default: m.Europe })))
 
 function ThemeToggle() {
   const [theme, setTheme] = useState<string | null>(() => {
@@ -96,7 +100,7 @@ export default function App() {
           </p>
         </header>
 
-        {!data ? <p className="note">Loading data…</p> : (
+        {!data ? <p className="note" style={{ minHeight: '100vh' }}>Loading data…</p> : (
           <>
             <Headlines data={data} a={assumptions} />
 
@@ -119,12 +123,15 @@ export default function App() {
               </div>
             </div>
 
-            <CostVsOutcomes cities={data.cities} assumptions={assumptions} outcome={outcome} setOutcome={setOutcome} />
-            <CompareCities cities={data.cities} trend={data.cityTrend} assumptions={assumptions} />
-            <Fields fields={data.fields} cityFields={data.cityFields} cities={data.cities} assumptions={assumptions} />
-            <Universities universities={data.universities} />
-            <Europe latest={data.euLatest} series={data.euSeries} />
-            <Methodology meta={data.meta} />
+            {/* Full-height fallbacks (here and for the data) keep the footer below the fold, so nothing shifts. */}
+            <Suspense fallback={<p className="note" style={{ minHeight: '100vh' }}>Loading charts…</p>}>
+              <CostVsOutcomes cities={data.cities} assumptions={assumptions} outcome={outcome} setOutcome={setOutcome} />
+              <CompareCities cities={data.cities} trend={data.cityTrend} assumptions={assumptions} />
+              <Fields fields={data.fields} cityFields={data.cityFields} cities={data.cities} assumptions={assumptions} />
+              <Universities universities={data.universities} />
+              <Europe latest={data.euLatest} series={data.euSeries} />
+              <Methodology meta={data.meta} />
+            </Suspense>
           </>
         )}
       </main>
